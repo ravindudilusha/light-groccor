@@ -3,13 +3,18 @@ import Headers from '../Component/Headers';
 import Subheader from '../Component/Subheader';
 import Carousel from 'react-bootstrap/Carousel';
 import Categories from '../Component/Categories';
+import NewArrival from '../Component/NewArrival';
+import BestSellers from '../Component/BestSellers';
+import Footer from '../Component/Footer';
 import "../styles/Header.css";
 import "../styles/Home.css";
+import imgcontainer from "../Assets/bannerimg.svg";
 
 // Example images for carousel (replace with your own)
 import slide1 from "../Assets/Carosouel.svg";
 import slide2 from "../Assets/Carosouel.svg";
 import slide3 from "../Assets/Carosouel.svg";
+
 
 function Home() {
   return (
@@ -42,6 +47,10 @@ function Home() {
       </Carousel>
 
       <Categories/>
+      <NewArrival/>
+      <BestSellers/>
+      <img src={imgcontainer} className="img-fluid w-100" alt="Banner" />
+      <Footer/>
     </div>
   );
 }

@@ -33,7 +33,7 @@ function Headers() {
           <div className="position-relative d-flex align-items-center me-4">
             <FaShoppingCart className="fs-5" />
             <span className="cart-badge">3</span>
-            <span className="ms-3">Cart</span>
+            {/* <span className="ms-3">Cart</span> */}
           </div>
 
           <button

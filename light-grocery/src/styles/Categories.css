@@ -1,0 +1,22 @@
+*{
+     font-family: 'Poppins', sans-serif;
+}
+
+.categorie-title{
+    font-size: 15px;
+}
+
+.section-title{
+    font-size: 24px;
+    font-weight: 500;
+    
+}
+
+.card-title{
+    font-size: 13px;
+}
+
+.Cardprice-title{
+    font-size: 20px;
+    font-weight:500;
+}
