@@ -14,48 +14,35 @@ const categories = [
 function Categories() {
   return (
     <div className="container my-4">
-      {/* Header row: title + view all */}
+      {/* Header row */}
       <div className="d-flex justify-content-between align-items-center mb-3">
         <p className="mb-2 section-title">Explore Popular Categories</p>
-        <a href="#" className="text-decoration-none" style={{color:"black"}}>
+        <a href="#" className="text-decoration-none text-dark seeAll-text">
           See All
         </a>
       </div>
 
       {/* Cards row */}
-      <div className="d-flex flex-wrap gap-3 justify-content-between">
+      <div className="d-flex flex-wrap gap-3 justify-content-between justify-content-center-mobile">
         {categories.map((cat) => (
           <div
             key={cat.id}
-            className="card text-white"
-            style={{
-              minWidth: "18%",
-              maxWidth: "18%",
-              position: "relative",
-              overflow: "hidden",
-            }}
+            className="card text-white product-card"
           >
             <img
               src={cat.imageUrl}
               className="card-img"
               alt={cat.title}
-              style={{ objectFit: "cover", height: "200px" }}
             />
-           <div
-  className="card-img-overlay d-flex align-items-end p-2"
-  style={{
-    background: 'linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0))',
-  }}
->
-  <p className="card-title mb-0 categorie-title">{cat.title}</p>
-</div>
-
-
+            <div className="card-img-overlay d-flex align-items-end p-2 overlay-gradient">
+              <p className="card-title mb-0 categorie-title">{cat.title}</p>
+            </div>
           </div>
         ))}
       </div>
     </div>
   );
 }
+
 
 export default Categories;

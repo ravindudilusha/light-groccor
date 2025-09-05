@@ -1,0 +1,59 @@
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+.product-title{
+    font-size: 24px;
+    font-weight: 600;
+
+}
+
+.product-price{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.product-name-title{
+    font-size: 16px;
+font-weight: 500;
+margin-bottom: 0;
+}
+
+.Size_quanitiy_title{
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.nav-tabs-simple {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid #dee2e6;
+  list-style: none;
+  padding-left: 0;
+}
+
+.nav-tabs-simple li button {
+  background: none;
+  border: none;
+  color: #6c757d;
+  font-weight: 500;
+  padding: 10px 0;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-tabs-simple li button.tab-active {
+  border-bottom: 3px solid #FD7E14; /* orange underline */
+  color: #000000;
+  font-weight: 600;
+}
+
+.tab-content-simple {
+  padding-top: 15px;
+}
+
+.routepath_title{
+  font-size: 15px;
+  color: #6c757d;
+}

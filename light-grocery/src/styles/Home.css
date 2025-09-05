@@ -38,3 +38,17 @@
   background-color: #fff;
   border-color: #fff;
 }
+
+.hero-banner {
+  max-height: 500px; /* desktop height */
+}
+
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .hero-banner {
+    max-height: 250px; /* reduce height for small screens */
+    object-fit: contain; /* ensure full image is visible */
+    padding: 0 10px; /* add some breathing room */
+  }
+}

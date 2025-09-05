@@ -1,11 +1,11 @@
-import React from 'react';
-import Headers from '../Component/Headers';
-import Subheader from '../Component/Subheader';
-import Carousel from 'react-bootstrap/Carousel';
-import Categories from '../Component/Categories';
-import NewArrival from '../Component/NewArrival';
-import BestSellers from '../Component/BestSellers';
-import Footer from '../Component/Footer';
+import React from "react";
+import Headers from "../Component/Headers";
+import Subheader from "../Component/Subheader";
+import Carousel from "react-bootstrap/Carousel";
+import Categories from "../Component/Categories";
+import NewArrival from "../Component/NewArrival";
+import BestSellers from "../Component/BestSellers";
+import Footer from "../Component/Footer";
 import "../styles/Header.css";
 import "../styles/Home.css";
 import imgcontainer from "../Assets/bannerimg.svg";
@@ -14,7 +14,6 @@ import imgcontainer from "../Assets/bannerimg.svg";
 import slide1 from "../Assets/Carosouel.svg";
 import slide2 from "../Assets/Carosouel.svg";
 import slide3 from "../Assets/Carosouel.svg";
-
 
 function Home() {
   return (
@@ -29,28 +28,44 @@ function Home() {
       <Carousel className="mt-3" controls indicators>
         <Carousel.Item>
           <div className="d-flex justify-content-center">
-            <img className="d-block w-90" src={slide1} alt="First slide" />
+            <img
+              className="d-block img-fluid w-100 hero-banner"
+              src={slide1}
+              alt="First slide"
+            />
           </div>
         </Carousel.Item>
 
         <Carousel.Item>
           <div className="d-flex justify-content-center">
-            <img className="d-block w-90" src={slide2} alt="Second slide" />
+            <img
+              className="d-block img-fluid w-100 hero-banner"
+              src={slide2}
+              alt="Second slide"
+            />
           </div>
         </Carousel.Item>
 
         <Carousel.Item>
           <div className="d-flex justify-content-center">
-            <img className="d-block w-90" src={slide3} alt="Third slide" />
+            <img
+              className="d-block img-fluid w-100 hero-banner"
+              src={slide3}
+              alt="Third slide"
+            />
           </div>
         </Carousel.Item>
       </Carousel>
 
-      <Categories/>
-      <NewArrival/>
-      <BestSellers/>
-      <img src={imgcontainer} className="img-fluid w-100" alt="Banner" />
-      <Footer/>
+      <Categories />
+      <NewArrival />
+      <BestSellers />
+     <img
+  src={imgcontainer}
+  className="img-fluid w-100 banner-img"
+  alt="Banner"
+/>
+      <Footer />
     </div>
   );
 }

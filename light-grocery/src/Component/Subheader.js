@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 import { FaBars } from "react-icons/fa";
-import Dropdown from 'react-bootstrap/Dropdown';
+import Dropdown from "react-bootstrap/Dropdown";
+import "../styles/Subheader.css";
 
 function Subheader() {
   return (
     <nav className="navbar navbar-expand-lg sub-header">
       <div className="container">
-        
-        {/* All Categories Dropdown */}
+        {/* All Categories Dropdown (always visible) */}
         <Dropdown>
           <Dropdown.Toggle
             variant="light"
@@ -31,43 +31,60 @@ function Subheader() {
             <Dropdown.Item href="/spices">🌿 Spices & Herbs</Dropdown.Item>
             <Dropdown.Item href="/baby-food">🍼 Baby Food</Dropdown.Item>
             <Dropdown.Item href="/fruit-juices">🍹 Fruit Juices</Dropdown.Item>
-            <Dropdown.Item href="/beverages">🥤 Beverages</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
 
-        {/* Other Navigation Links */}
-        <ul className="navbar-nav flex-row ms-4">
+        {/* Other Navigation Links (hide on mobile) */}
+        <ul className="navbar-nav flex-row ms-4 d-none d-lg-flex" style={{fontSize:"14px"}}>
           <li className="nav-item me-2">
-            <a className="nav-link" href="/offers">All Dry Products</a>
+            <a className="nav-link navbar-link-custom" href="/offers">
+              All Dry Products
+            </a>
           </li>
           <li className="nav-item me-2">
-            <a className="nav-link" href="/new-arrivals">Oils & Vinegar</a>
+            <a className="nav-link navbar-link-custom" href="/new-arrivals">
+              Oils & Vinegar
+            </a>
           </li>
           <li className="nav-item me-2">
-            <a className="nav-link" href="/popular">Pasta, Rice & Sauces</a>
+            <a className="nav-link navbar-link-custom" href="/popular">
+              Pasta, Rice & Sauces
+            </a>
           </li>
           <li className="nav-item me-2">
-            <a className="nav-link" href="/contact">Cereal & Muesli</a>
+            <a className="nav-link navbar-link-custom" href="/contact">
+              Cereal & Muesli
+            </a>
           </li>
           <li className="nav-item me-2">
-            <a className="nav-link" href="/contact">Coffee</a>
+            <a className="nav-link navbar-link-custom" href="/contact">
+              Coffee
+            </a>
           </li>
           <li className="nav-item me-2">
-            <a className="nav-link" href="/contact">Spices & Herbs</a>
+            <a className="nav-link navbar-link-custom" href="/contact">
+              Spices & Herbs
+            </a>
           </li>
           <li className="nav-item me-2">
-            <a className="nav-link" href="/contact">Baby Food</a>
+            <a className="nav-link navbar-link-custom" href="/contact">
+              Baby Food
+            </a>
           </li>
           <li className="nav-item me-2">
-            <a className="nav-link" href="/contact">Fruit Juices</a>
+            <a className="nav-link navbar-link-custom" href="/contact">
+              Fruit Juices
+            </a>
           </li>
           <li className="nav-item me-2">
-            <a className="nav-link" href="/contact">Beverages</a>
+            <a className="nav-link navbar-link-custom" href="/contact">
+              Beverages
+            </a>
           </li>
         </ul>
       </div>
     </nav>
-  )
+  );
 }
 
-export default Subheader
+export default Subheader;

@@ -3,7 +3,7 @@ import "../styles/Categories.css";
 import Product01 from "../Assets/Product_cheese.svg";
 import { Plus } from "lucide-react";
 
-const products = [
+const bestSellers = [
   { id: 1, title: "Aged Gouda Cheese 200g", price: "Rs.1500.00", imageUrl: Product01 },
   { id: 2, title: "Cheddar Cheese 250g", price: "Rs.1200.00", imageUrl: Product01 },
   { id: 3, title: "Mozzarella Cheese 300g", price: "Rs.1800.00", imageUrl: Product01 },
@@ -11,37 +11,19 @@ const products = [
   { id: 5, title: "Brie Cheese 200g", price: "Rs.1600.00", imageUrl: Product01 },
 ];
 
-function NewArrival() {
+function LikeProduct() {
   return (
     <div className="container my-5">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <p className="mb-0 section-title">New Arrivals</p>
-        <a href="#" className="text-decoration-none text-dark seeAll-text">
-          See All
-        </a>
+        <p className="mb-0 section-title">You may also Like</p>
       </div>
 
       <div className="d-flex flex-wrap gap-3 justify-content-between justify-content-center-mobile">
-        {products.map(product => (
+        {bestSellers.map(product => (
           <div key={product.id} className="card border-0 product-card">
             <div className="position-relative">
               <img src={product.imageUrl} alt={product.title} className="card-img-top" />
-
-              {/* Circular Add to Cart Button Bottom Right */}
-              <button
-                className="position-absolute d-flex justify-content-center align-items-center"
-                style={{
-                  bottom: "10px",
-                  right: "10px",
-                  width: "40px",
-                  height: "40px",
-                  borderRadius: "50%",
-                  backgroundColor: "#FD7E14",
-                  border: "none",
-                  cursor: "pointer",
-                  boxShadow: "0 2px 6px rgba(0,0,0,0.2)"
-                }}
-              >
+              <button className="btn position-absolute d-flex justify-content-center align-items-center plus-btn">
                 <Plus size={20} color="white" />
               </button>
             </div>
@@ -56,4 +38,4 @@ function NewArrival() {
   );
 }
 
-export default NewArrival;
+export default LikeProduct;

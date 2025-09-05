@@ -1,22 +1,107 @@
-*{
-     font-family: 'Poppins', sans-serif;
+* {
+  font-family: 'Poppins', sans-serif;
 }
 
-.categorie-title{
+.categorie-title {
+  font-size: 15px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.card-title {
+  font-size: 13px;
+}
+
+.Cardprice-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Generic product card class for all sections */
+.product-card {
+  flex: 1 1 18%; /* default width for large screens */
+  max-width: 18%;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Plus button */
+.plus-btn {
+  bottom: 10px;
+  right: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: orange;
+  border: none;
+}
+
+/* Gradient overlay */
+.overlay-gradient {
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+}
+
+/* Responsive layouts */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .product-card {
+    flex: 1 1 45%; /* 2 cards per row */
+    max-width: 45%;
+  }
+
+  .product-card img {
+    height: 180px;
+  }
+
+  .section-title {
     font-size: 15px;
-}
-
-.section-title{
-    font-size: 24px;
     font-weight: 500;
-    
+  }
+
+  .seeAll-text {
+    font-size: 12px;
+  }
 }
 
-.card-title{
-    font-size: 13px;
-}
+/* Mobile phones */
+@media (max-width: 576px) {
+  .product-card {
+    flex: 0 0 50%; /* take 50% width per card */
+  }
 
-.Cardprice-title{
-    font-size: 20px;
-    font-weight:500;
+
+  .product-card img {
+    height: 150px;
+  }
+
+  .section-title {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .seeAll-text {
+    font-size: 12px;
+  }
+
+   .justify-content-center-mobile {
+    justify-content: flex-start !important; /* align cards to start */
+  }
+
+  .card-title {
+    font-size: 12px;
+  }
+
+  .Cardprice-title {
+    font-size: 16px;
+  }
 }
