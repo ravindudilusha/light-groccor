@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import Headers from "../Component/Headers";
 import Subheader from "../Component/Subheader";
 import Footer from "../Component/Footer";
@@ -6,8 +7,11 @@ import Product01 from "../Assets/Product_cheese.svg";
 import { RiDeleteBinLine } from "react-icons/ri";
 
 import "../styles/ProductPage.css";
+import "../styles/Cart.css";
 
 function Cart() {
+  const navigate = useNavigate(); // Initialize navigate
+
   // Sample cart items
   const [cartItems, setCartItems] = useState([
     { id: 1, title: "Aged Gouda Cheese 200g", price: 1500, quantity: 1, imageUrl: Product01 },
@@ -30,9 +34,12 @@ function Cart() {
   const tax = subTotal * 0.08;
   const total = subTotal + tax;
 
+  const handleCheckout = () => {
+    navigate("/checkout"); // Navigate to checkout page
+  };
+
   return (
     <div>
-      <Headers />
       <Subheader />
 
       <div className="container py-5">
@@ -40,7 +47,10 @@ function Cart() {
         <div className="row">
           {/* LEFT COLUMN - Cart Items */}
           <div className="col-md-7 mb-4">
-            <h4>Your Cart ({cartItems.length} items)</h4>
+            <div className="Cart_text_container">
+              <p className="cart-text">Your Cart</p>
+              <p className="cart_count_text">{cartItems.length} items in a cart</p>
+            </div>
             <hr />
             {cartItems.map(item => (
               <div
@@ -102,7 +112,7 @@ function Cart() {
                 <span>Tax (8%)</span>
                 <span>Rs.{tax.toFixed(2)}</span>
               </div>
-              <div className="d-flex justify-content-between fw-bold mb-3">
+              <div className="total-text d-flex justify-content-between mb-3">
                 <span>Total</span>
                 <span>Rs.{total.toFixed(2)}</span>
               </div>
@@ -112,12 +122,18 @@ function Cart() {
                 <button
                   className="btn w-100"
                   style={{ backgroundColor: "#FD7E14", color: "#fff", fontWeight: "600" }}
+                  onClick={handleCheckout} // Navigate to checkout
                 >
                   Checkout
                 </button>
                 <button
                   className="btn w-100 border"
-                  style={{ borderColor: "#FD7E14", color: "#FD7E14", backgroundColor: "#fff", fontWeight: "600" }}
+                  style={{
+                    borderColor: "#FD7E14",
+                    color: "#FD7E14",
+                    backgroundColor: "#fff",
+                    fontWeight: "600",
+                  }}
                 >
                   Continue Shopping
                 </button>

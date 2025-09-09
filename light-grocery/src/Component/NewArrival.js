@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/Categories.css";
 import Product01 from "../Assets/Product_cheese.svg";
 import { Plus } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   { id: 1, title: "Aged Gouda Cheese 200g", price: "Rs.1500.00", imageUrl: Product01 },
@@ -12,22 +13,40 @@ const products = [
 ];
 
 function NewArrival() {
+  const navigate = useNavigate();
+
+  const handleProductClick = (productId) => {
+    navigate("/Productpage");
+  };
+
+  const handleSeeAllClick = () => {
+    navigate("/view");
+  };
+
   return (
     <div className="container my-5">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <p className="mb-0 section-title">New Arrivals</p>
-        <a href="#" className="text-decoration-none text-dark seeAll-text">
+        <button
+          onClick={handleSeeAllClick}
+          className="btn btn-link p-0 text-decoration-none text-dark seeAll-text"
+          style={{ cursor: "pointer" }}
+        >
           See All
-        </a>
+        </button>
       </div>
 
       <div className="d-flex flex-wrap gap-3 justify-content-between justify-content-center-mobile">
-        {products.map(product => (
-          <div key={product.id} className="card border-0 product-card">
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className="card border-0 product-card"
+            style={{ cursor: "pointer" }}
+            onClick={() => handleProductClick(product.id)}
+          >
             <div className="position-relative">
               <img src={product.imageUrl} alt={product.title} className="card-img-top" />
 
-              {/* Circular Add to Cart Button Bottom Right */}
               <button
                 className="position-absolute d-flex justify-content-center align-items-center"
                 style={{
@@ -39,7 +58,11 @@ function NewArrival() {
                   backgroundColor: "#FD7E14",
                   border: "none",
                   cursor: "pointer",
-                  boxShadow: "0 2px 6px rgba(0,0,0,0.2)"
+                  boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
+                }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  console.log("Add to cart clicked for", product.title);
                 }}
               >
                 <Plus size={20} color="white" />

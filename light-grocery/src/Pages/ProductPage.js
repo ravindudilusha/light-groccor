@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import Headers from "../Component/Headers";
 import Subheader from "../Component/Subheader";
 import Footer from "../Component/Footer";
@@ -10,6 +11,7 @@ import "../styles/ProductPage.css";
 import LikeProduct from "../Component/LikeProduct";
 
 function ProductPage() {
+  const navigate = useNavigate(); // Initialize navigate
   const product = {
     name: "Orange Juice",
     price: "$120.00",
@@ -49,14 +51,20 @@ function ProductPage() {
     setReviewRating(0);
   };
 
+  const handleGoToCart = () => {
+    setShowModal(false);
+    navigate("/Cart"); // Navigate to Cart
+  };
+
   return (
     <div>
-      <Headers />
       <Subheader />
 
       {/* Product Section */}
       <div className="container py-5">
-        <p className="mb-5 routepath_title">Home / Fresh Juice / Orange Juice 100ml</p>
+        <p className="mb-5 routepath_title">
+          Home / Fresh Juice / Orange Juice 100ml
+        </p>
         <div className="row">
           <div className="col-md-6 d-flex">
             <div className="d-flex flex-column me-3">
@@ -101,10 +109,7 @@ function ProductPage() {
                     }`}
                     style={
                       selectedSize === size
-                        ? {
-                            backgroundColor: "#FD7E14",
-                            borderColor: "#FD7E14a",
-                          }
+                        ? { backgroundColor: "#FD7E14", borderColor: "#FD7E14a" }
                         : {}
                     }
                     onClick={() => setSelectedSize(size)}
@@ -138,11 +143,7 @@ function ProductPage() {
             {/* Add to Cart */}
             <button
               className="btn w-50 py-2"
-              style={{
-                backgroundColor: "#FD7E14",
-                color: "#fff",
-                border: "none",
-              }}
+              style={{ backgroundColor: "#FD7E14", color: "#fff", border: "none" }}
               onClick={handleAddToCart}
             >
               Add to Cart
@@ -167,8 +168,7 @@ function ProductPage() {
               className={activeTab === "reviews" ? "tab-active" : ""}
               onClick={() => setActiveTab("reviews")}
             >
-              Reviews{" "}
-              <span className="badge bg-secondary">{reviews.length}</span>
+              Reviews <span className="badge bg-secondary">{reviews.length}</span>
             </button>
           </li>
           <li>
@@ -183,10 +183,7 @@ function ProductPage() {
 
         <div className="tab-content-simple mt-3">
           {activeTab === "description" && (
-            <p>
-              This is a fresh and natural orange juice, perfect for your
-              breakfast.
-            </p>
+            <p>This is a fresh and natural orange juice, perfect for your breakfast.</p>
           )}
 
           {activeTab === "reviews" && (
@@ -195,27 +192,20 @@ function ProductPage() {
                 <div key={idx} className="mb-2 border-bottom pb-2">
                   <strong>{rev.name}</strong>{" "}
                   {[...Array(5)].map((_, i) => (
-                    <FaStar
-                      key={i}
-                      color={i < rev.rating ? "#FD7E14" : "#ccc"}
-                    />
+                    <FaStar key={i} color={i < rev.rating ? "#FD7E14" : "#ccc"} />
                   ))}
                   <p>{rev.content}</p>
                 </div>
               ))}
 
-              {/* Add Review */}
               <div className="mt-3">
                 <div className="d-flex align-items-center gap-2 mb-2">
-                  {/* Star Input */}
                   {[...Array(5)].map((_, i) => (
                     <FaStar
                       key={i}
                       size={24}
                       style={{ cursor: "pointer" }}
-                      color={
-                        i < (hoverRating || reviewRating) ? "#FD7E14" : "#ccc"
-                      }
+                      color={i < (hoverRating || reviewRating) ? "#FD7E14" : "#ccc"}
                       onMouseEnter={() => setHoverRating(i + 1)}
                       onMouseLeave={() => setHoverRating(0)}
                       onClick={() => setReviewRating(i + 1)}
@@ -234,9 +224,9 @@ function ProductPage() {
                 <button
                   className="btn d-flex align-items-center gap-2"
                   style={{
-                    backgroundColor: "#FFA726", // light orange fill
-                    color: "#fff", // white text
-                    fontWeight: "600", // bold text
+                    backgroundColor: "#FFA726",
+                    color: "#fff",
+                    fontWeight: "600",
                     border: "none",
                     padding: "0.5rem 1rem",
                   }}
@@ -260,10 +250,7 @@ function ProductPage() {
           className="modal fade show"
           style={{ display: "block", backgroundColor: "rgba(0,0,0,0.5)" }}
         >
-          <div
-            className="modal-dialog modal-dialog-centered"
-            style={{ maxWidth: "400px" }}
-          >
+          <div className="modal-dialog modal-dialog-centered" style={{ maxWidth: "400px" }}>
             <div className="modal-content">
               <div className="modal-header">
                 <p className="modal-title d-flex align-items-center gap-2">
@@ -281,17 +268,11 @@ function ProductPage() {
                     src={selectedImage}
                     alt={product.name}
                     className="img-thumbnail me-3"
-                    style={{
-                      width: "80px",
-                      height: "80px",
-                      objectFit: "cover",
-                    }}
+                    style={{ width: "80px", height: "80px", objectFit: "cover" }}
                   />
                   <div>
                     <p className="product-name-title mb-1">{product.name}</p>
-                    <p className="Size_quanitiy_title mb-1">
-                      Size: {selectedSize}
-                    </p>
+                    <p className="Size_quanitiy_title mb-1">Size: {selectedSize}</p>
                     <p className="Size_quanitiy_title mb-0">Qty: {quantity}</p>
                   </div>
                 </div>
@@ -306,11 +287,8 @@ function ProductPage() {
                 </button>
                 <button
                   className="btn w-100"
-                  style={{
-                    border: "1px solid #6c757d",
-                    color: "#343a40",
-                    backgroundColor: "#fff",
-                  }}
+                  onClick={handleGoToCart} // Navigate to /Cart
+                  style={{ border: "1px solid #6c757d", color: "#343a40", backgroundColor: "#fff" }}
                 >
                   Go to Cart
                 </button>
@@ -320,7 +298,7 @@ function ProductPage() {
         </div>
       )}
 
-      <LikeProduct/>
+      <LikeProduct />
       <Footer />
     </div>
   );

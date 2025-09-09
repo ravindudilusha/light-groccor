@@ -19,7 +19,6 @@ function Home() {
   return (
     <div>
       {/* Main Header */}
-      <Headers />
 
       {/* Sub Header */}
       <Subheader />
@@ -65,7 +64,7 @@ function Home() {
   className="img-fluid w-100 banner-img"
   alt="Banner"
 />
-      <Footer />
+
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/Categories.css";
 import Product01 from "../Assets/Product_cheese.svg";
+import { useNavigate } from "react-router-dom";
 import { Plus } from "lucide-react";
 
 const bestSellers = [
@@ -12,13 +13,23 @@ const bestSellers = [
 ];
 
 function BestSellers() {
+    const navigate = useNavigate();
+  
+
+  const handleSeeAllClick = () => {
+    navigate("/view");
+  };
   return (
     <div className="container my-5">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <p className="mb-0 section-title">Best Sellers</p>
-        <a href="#" className="text-decoration-none text-dark seeAll-text">
+         <button
+          onClick={handleSeeAllClick}
+          className="btn btn-link p-0 text-decoration-none text-dark seeAll-text"
+          style={{ cursor: "pointer" }}
+        >
           See All
-        </a>
+        </button>
       </div>
 
       <div className="d-flex flex-wrap gap-3 justify-content-between justify-content-center-mobile">

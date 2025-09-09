@@ -1,0 +1,27 @@
+.summary_title,
+.checkout_title{
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.payment-option {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.payment-option:hover {
+  background-color: #f8f9fa;
+}
+
+.payment-option.selected {
+  border: 2px solid green;
+  background-color: #eafbea;
+}
+
+.product_order_title{
+    font-size: 14px;
+    font-weight: 600;
+}
+

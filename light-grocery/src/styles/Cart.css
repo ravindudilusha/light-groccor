@@ -1,0 +1,27 @@
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+.total-text{
+    font-weight: 600;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.cart-text{
+    font-size: 23px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.cart_count_text{
+    font-size: 14px;
+    color: gray;
+    margin: 0;
+}
+
+.Cart_text_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

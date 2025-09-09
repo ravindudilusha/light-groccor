@@ -57,3 +57,36 @@ margin-bottom: 0;
   font-size: 15px;
   color: #6c757d;
 }
+
+@media (max-width: 767px) {
+  /* Mobile layout: main image on top, thumbnails below */
+  .row .col-md-6.d-flex {
+    flex-direction: column; /* stack main image and thumbnails */
+  }
+
+  /* Thumbnails in one horizontal row, aligned left */
+  .row .col-md-6.d-flex > .d-flex.flex-column.me-3 {
+    flex-direction: row !important; /* horizontal row */
+    margin-bottom: 10px;
+    justify-content: flex-start; /* align left */
+    gap: 10px;
+    flex-wrap: nowrap; /* prevent wrapping */
+    overflow-x: auto; /* scroll if too many thumbnails */
+  }
+
+  /* Main image on top */
+  .row .col-md-6.d-flex > img.img-fluid {
+    order: -1; /* main image appears above thumbnails */
+    margin-bottom: 10px;
+    max-height: 300px; /* optional */
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* Full width Add to Cart button */
+  .col-md-6 button.btn.w-50 {
+    width: 100% !important;
+  }
+}
+
+
