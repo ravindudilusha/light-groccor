@@ -2,9 +2,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.categorie-title {
-  font-size: 15px;
-}
 
 .section-title {
   font-size: 24px;
@@ -12,7 +9,8 @@
 }
 
 .card-title {
-  font-size: 13px;
+  font-size: 14px;
+  padding-bottom: 10px;
 }
 
 .Cardprice-title {

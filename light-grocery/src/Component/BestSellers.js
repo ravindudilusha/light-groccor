@@ -1,15 +1,19 @@
 import React from "react";
 import "../styles/Categories.css";
-import Product01 from "../Assets/Product_cheese.svg";
+import Product01 from "../Assets/Best Seller 01.svg";
+import Product02 from "../Assets/Best Seller 02.svg";
+import Product03 from "../Assets/Best Seller 03.svg";
+import Product04 from "../Assets/Best Seller 04.svg";
+import Product05 from "../Assets/Best Seller 05.svg";
 import { useNavigate } from "react-router-dom";
 import { Plus } from "lucide-react";
 
 const bestSellers = [
-  { id: 1, title: "Aged Gouda Cheese 200g", price: "Rs.1500.00", imageUrl: Product01 },
-  { id: 2, title: "Cheddar Cheese 250g", price: "Rs.1200.00", imageUrl: Product01 },
-  { id: 3, title: "Mozzarella Cheese 300g", price: "Rs.1800.00", imageUrl: Product01 },
-  { id: 4, title: "Parmesan Cheese 150g", price: "Rs.2000.00", imageUrl: Product01 },
-  { id: 5, title: "Brie Cheese 200g", price: "Rs.1600.00", imageUrl: Product01 },
+  { id: 1, title: "Cooked Ham 100g", price: "Rs.1500.00", imageUrl: Product01 },
+  { id: 2, title: "Pesto Genovese 190g", price: "Rs.1200.00", imageUrl: Product02 },
+  { id: 3, title: "Italian Sun Dried Tomato 200g", price: "Rs.1800.00", imageUrl: Product03 },
+  { id: 4, title: "Black Beans 400g", price: "Rs.2000.00", imageUrl: Product04 },
+  { id: 5, title: "Spaghettini 200g", price: "Rs.1600.00", imageUrl: Product05 },
 ];
 
 function BestSellers() {

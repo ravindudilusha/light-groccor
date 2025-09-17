@@ -1,15 +1,19 @@
 import React from "react";
 import "../styles/Categories.css";
 import Product01 from "../Assets/Product_cheese.svg";
+import Product02 from "../Assets/Product02.svg";
+import ProductJuice from "../Assets/Product_juice.svg";
+import Product_chocolate from "../Assets/Product_chocolate.svg";
+import Chili from "../Assets/Chili.svg";
 import { Plus } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const products = [
   { id: 1, title: "Aged Gouda Cheese 200g", price: "Rs.1500.00", imageUrl: Product01 },
-  { id: 2, title: "Cheddar Cheese 250g", price: "Rs.1200.00", imageUrl: Product01 },
-  { id: 3, title: "Mozzarella Cheese 300g", price: "Rs.1800.00", imageUrl: Product01 },
-  { id: 4, title: "Parmesan Cheese 150g", price: "Rs.2000.00", imageUrl: Product01 },
-  { id: 5, title: "Brie Cheese 200g", price: "Rs.1600.00", imageUrl: Product01 },
+  { id: 2, title: "Spaghettini 200g", price: "Rs.1200.00", imageUrl: Product02 },
+  { id: 3, title: "Orange Juice 100ml", price: "Rs.1800.00", imageUrl: ProductJuice },
+  { id: 4, title: "Red Chili 200g", price: "Rs.2000.00", imageUrl: Chili },
+  { id: 5, title: "Colombian Ground Coffee 200g", price: "Rs.1600.00", imageUrl: Product_chocolate },
 ];
 
 function NewArrival() {

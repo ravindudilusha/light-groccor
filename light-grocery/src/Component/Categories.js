@@ -1,14 +1,17 @@
 import React from "react";
 import freshjuice from "../Assets/FreshJuice.svg";
+import Spices from "../Assets/Spices.svg";
+import Cheese from "../Assets/Cheese.svg";
+import Chocolate from "../Assets/Chocolate.svg"
 import "../styles/Categories.css";
 
 // Example data – you can replace with real data later
 const categories = [
-  { id: 1, title: "Category 1", imageUrl: freshjuice },
-  { id: 2, title: "Category 2", imageUrl: freshjuice },
-  { id: 3, title: "Category 3", imageUrl: freshjuice },
-  { id: 4, title: "Category 4", imageUrl: freshjuice },
-  { id: 5, title: "Category 5", imageUrl: freshjuice },
+  { id: 1, title: "Fresh Juice", imageUrl: freshjuice },
+  { id: 2, title: "Spices & Herbs", imageUrl: Spices },
+  { id: 3, title: "Cheese", imageUrl: Cheese },
+  { id: 4, title: "Chocolate", imageUrl: Chocolate },
+  { id: 5, title: "Dry Products", imageUrl: freshjuice },
 ];
 
 function Categories() {
